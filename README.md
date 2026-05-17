@@ -4,6 +4,10 @@
 This project demonstrates a Power Automate solution that automatically synchronizes data between an Excel file and a SharePoint list on a daily basis.
 The flow ensures that all records remain consistent across both systems by reflecting new entries as well as updates made to existing records.
 
+## ⚠️ Note
+The data used in this repository is a simplified dummy dataset created for demonstration.  
+The actual implementation was carried out on a much larger dataset (~5000+ rows), which is not included due to data privacy and organisational constraints.
+
 ---
 
 ## ⚙️ Tools & Connectors
