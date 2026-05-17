@@ -59,11 +59,20 @@ The delete-and-recreate strategy:
 ## ⚠️ Challenges Faced
 
 ### 📅 Date Column Handling
-- Differences in date formats between Excel and SharePoint caused update failures
+- Differences in date formats between Excel and SharePoint caused update failures  
 - Required consistent formatting using expressions like:
-```plaintext
+
+```text
+// Used during normal create
 formatDateTime(item()?['DateColumn'], 'yyyy-MM-dd')
 
+// Used when handling null values (after delete + recreate)
+if(
+   empty(item()?['CompleteBy']),
+   null,
+   formatDateTime(item()?['CompleteBy'], 'yyyy-MM-dd')
+)
+```
 ---
 
 ✅ Outcome
